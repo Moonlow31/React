@@ -35,14 +35,12 @@ const pokemonList = [
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-  const pokemonSuivant = () => {pokemonIndex < pokemonList.length-1? setPokemonIndex(pokemonIndex +1) : setPokemonIndex(0)};
-  const pokemonPrecedent = () => {pokemonIndex === 0? setPokemonIndex(pokemonList.length-1) : setPokemonIndex(pokemonIndex - 1)};
   return (
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
       <NavBar 
-      pokemonPrecedent={pokemonPrecedent}
-      pokemonSuivant={pokemonSuivant}
+      pokemonList={pokemonList}
+      setPokemonIndex={setPokemonIndex}
       />
     </div>
   );
